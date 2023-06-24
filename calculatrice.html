@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calculator</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <input type="text" id="result" class="form-control" readonly>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <button onclick="insert('+')" class="btn btn-default">+</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="insert('-')" class="btn btn-default">-</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="insert('*')" class="btn btn-default">*</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="insert('/')" class="btn btn-default">/</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <button onclick="insert('7')" class="btn btn-default">7</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="insert('8')" class="btn btn-default">8</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="insert('9')" class="btn btn-default">9</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="clearResult()" class="btn btn-default">C</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <button onclick="insert('4')" class="btn btn-default">4</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="insert('5')" class="btn btn-default">5</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="insert('6')" class="btn btn-default">6</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="calculate()" class="btn btn-primary">=</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <button onclick="insert('1')" class="btn btn-default">1</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="insert('2')" class="btn btn-default">2</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="insert('3')" class="btn btn-default">3</button>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <button onclick="insert('0')" class="btn btn-default">0</button>
+        </div>
+        <div class="col-md-6">
+          <button onclick="insert('.')" class="btn btn-default">.</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function insert(value) {
+        document.getElementById("result").value += value;
+      }
+
+      function clearResult() {
+        document.getElementById("result").value = "";
+      }
+
+      function calculate() {
+        let result = eval(document.getElementById("result").value);
+        document.getElementById("result").value = result;
+      }
+    </script>
+  </body>
+</html>
